@@ -51,22 +51,16 @@ public class Word
        int j;
        int len = word.length();
        String w = word;
-       if (len <=  1)
-       {
-	       return word;
-       } 
+       
        for (int ix=0; ix < len; ix++)
        {
 	       do
                {
-		       i = generator.nextInt(len);
+		       i = generator.nextInt(len-1);
                }
-               while (i == lastPos || i == len-1);
-               do
-	       {
-                       j = generator.nextInt(len);
-	       }             
-               while (j <= i);	       
+               while (i == lastPos);
+	       j = i + generator.nextInt(len-i-1)+1;
+
 	       String ithPosition = w.substring(i, i + 1);
 	       String jthPosition = w.substring(j, j + 1);
 	       String beforeI = w.substring(0, i);
@@ -82,5 +76,6 @@ public class Word
 
 
 }
+
 
 
