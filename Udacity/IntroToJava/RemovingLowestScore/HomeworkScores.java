@@ -1,4 +1,7 @@
-// BlueJ project: lesson7/scores4
+// BlueJ project: lesson7/scores5
+
+// Implement the sumAfterRemovingMinScore method more efficiently
+// by implementing a getLowScoreIndex method which is used in removeLowest
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -20,6 +23,35 @@ public class HomeworkScores
         currentSize = 0;
     }
 
+    /**
+     * Removes the lowest score.
+     */
+    public void removeLowest()
+    {
+        int lowScoreIndex = getLowScoreIndex();
+        remove(lowScoreIndex);
+    }
+
+    /**
+     * Finds the index of the lowest score.
+     * @return the index of the lowest score.
+     */
+    public int getLowScoreIndex()
+    {
+	    double lowScore = scores[0];
+	    int index = 0;
+	    for (int i = 0; i< currentSize; i++)
+	    {
+		    if (scores[i] < lowScore)
+		    {
+			    lowScore = scores[i];
+			    index = i;
+		    }
+		    
+	    }
+	    return index;
+    }
+
     public void readScores(Scanner userInput)
     {
         while (userInput.hasNextDouble())
@@ -28,14 +60,6 @@ public class HomeworkScores
             scores[currentSize] = nextScore;
             currentSize++;
         }
-    }
-
-    /**
-     * Removes the lowest score.
-     */
-    public void removeLowest()
-    {
-	    remove(find(lowScore()));
     }
 
     /**
