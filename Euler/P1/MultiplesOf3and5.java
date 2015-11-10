@@ -13,13 +13,15 @@ public class MultiplesOf3and5
 	 */
 	public static void main(String args[])
 	{
-		int[] mult3 =multiplesOfXBelowN(3,1000);
-	        int[] mult5 =multiplesOfXBelowN(5,1000);
-	        int[] mult15=multiplesOfXBelowN(15,1000);	
-	        int sum3 = sumOfIntArray(mult3);
-	        int sum5 = sumOfIntArray(mult5);
-	        int sum15 = sumOfIntArray(mult15);
-		System.out.println(sum3 + sum5 - sum15);
+		int[] multiples = {3, 5};
+		int answer = 0;
+		for (int mult : multiples)
+		{
+			answer = answer + sumOfIntArray(multiplesOfXBelowN(mult,1000));
+		}
+                // remove sum of multiples of both 3 and 5
+		answer = answer - sumOfIntArray(multiplesOfXBelowN(15,1000));
+		System.out.println(answer);
 		
 	}
 	/* Sums all elements in an array of integers
@@ -29,9 +31,9 @@ public class MultiplesOf3and5
 	public static int sumOfIntArray(int[] list)
 	{
 		int sum = 0;
-		for (int i=0; i< list.length; i++)
+		for (int num : list)
 		{
-			sum = sum + list[i];
+			sum = sum + num;
 		}
 		return sum;
 	}
@@ -43,6 +45,7 @@ public class MultiplesOf3and5
 	public static int[] multiplesOfXBelowN(int x, int n)
 	{
 		int arraySize;
+		// if n is multiple of x, exclude it from array
 		if (n % x == 0)
 		{
 			arraySize = (n/x)-1;
@@ -52,12 +55,9 @@ public class MultiplesOf3and5
 			arraySize = n/x;
 		}
 	        int[] multiples = new int[arraySize];
-		for(int i=0; (i*x)<n;i++)
+		for(int i = 1; (i*x) < n; i++)
 		{
-			if (i != 0)
-			{
 			multiples[i-1] = i*x;
-			}
 		}
 		return multiples;
 	}
