@@ -5,21 +5,17 @@
 //of these multiples is 23.
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
-import java.util.Arrays;
-import java.util.ArrayList;
-
 public class MultiplesOf3and5
 {
 	
 	/**Prints the sum of all the multiples of 3 or 5 
-	 * below 1000
+	 * below 1000. 
 	 */
 	public static void main(String args[])
 	{
-		int upperLimit = 1000;
-		int[] mult3 =multiplesOfXBelowN(3,upperLimit);
-	        int[] mult5 =multiplesOfXBelowN(5,upperLimit);
-	        int[] mult15=multiplesOfXBelowN(15,upperLimit);	
+		int[] mult3 =multiplesOfXBelowN(3,1000);
+	        int[] mult5 =multiplesOfXBelowN(5,1000);
+	        int[] mult15=multiplesOfXBelowN(15,1000);	
 	        int sum3 = sumOfIntArray(mult3);
 	        int sum5 = sumOfIntArray(mult5);
 	        int sum15 = sumOfIntArray(mult15);
