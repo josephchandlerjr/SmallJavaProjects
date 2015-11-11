@@ -11,7 +11,7 @@ public class FibonacciNumbers
 	private static double limit = 4 * Math.pow(10,6);
 	private double last = 0; 
         private double current = 1;
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		double evenSum = 0; 
 		FibonacciNumbers generator = new FibonacciNumbers();
