@@ -1,1 +1,1 @@
-# Udacity 
+# Small Java Projects 
