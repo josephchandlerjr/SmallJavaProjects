@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Portfolio()
+comment1.params=photoFile\ name
+comment1.target=void\ add(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ display()
+numComments=3
