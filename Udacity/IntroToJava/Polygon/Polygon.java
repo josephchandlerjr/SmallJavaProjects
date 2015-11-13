@@ -19,6 +19,9 @@
 
 import java.util.ArrayList;
 import java.awt.Point;
+
+
+
 /**
 	This class models a polgon
  */
@@ -46,7 +49,7 @@ public class Polygon
 	    double res = 0.0;
 	    Point p1;
 	    Point p2;
-	    //distances as doubles so we doubles for disance
+	    //distances as doubles so we doubles for distance
 	    double xdist; //x1 - x2
 	    double ydist; //y1 - y2
 	    for (int i = 0; i < points.size(); i++)
@@ -62,8 +65,6 @@ public class Polygon
     } 
     /**draw: draws the polygon by connecting consecutive points 
        and then connecting the last point to the first. 
-       Line class is part of custom graphics library so 
-       this method doesn't method is pretty useless right now.
        */
     public void draw()
     {
@@ -71,7 +72,7 @@ public class Polygon
         {
             Point p1 = points.get(i);
             Point p2 = points.get((i+1) % points.size());
-            //new Line(p1.x,p1.y,p2.x,p2.y).draw();
+            new Line(p1.x,p1.y,p2.x,p2.y).draw();
         }
     }
 }
